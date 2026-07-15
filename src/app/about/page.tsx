@@ -104,7 +104,7 @@ export default function AboutPage() {
           <h2 className="text-display-sm font-display font-semibold text-ink-950 dark:text-white">
             Who&apos;s behind it
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className={authors.length > 1 ? "mt-8 grid gap-6 sm:grid-cols-2" : "mt-8 grid gap-6"}>
             {authors.map((author) => (
               <a
                 key={author.slug}

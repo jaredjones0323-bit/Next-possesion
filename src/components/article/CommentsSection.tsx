@@ -1,24 +1,11 @@
 import { MessageCircle } from "lucide-react";
 
-const SAMPLE_COMMENTS = [
-  {
-    name: "Trevor H.",
-    date: "2 weeks ago",
-    body: "This is the first breakdown of the recruiting timeline that didn't make me feel like I was already behind. Sharing this with our whole AAU team's parents.",
-  },
-  {
-    name: "Aaliyah S.",
-    date: "1 month ago",
-    body: "Appreciate that this isn't trying to sell me a program. Just straight advice from someone who's actually been on the other side of the recruiting table.",
-  },
-];
-
 export function CommentsSection() {
   return (
     <section className="border-t border-ink-100 py-16 dark:border-ink-800">
       <h2 className="flex items-center gap-2 text-xl font-semibold text-ink-950 dark:text-white">
         <MessageCircle className="h-5 w-5 text-court-500" />
-        Discussion ({SAMPLE_COMMENTS.length})
+        Discussion
       </h2>
 
       <form className="mt-6 rounded-2xl border border-ink-100 bg-white p-5 dark:border-ink-800 dark:bg-ink-900">
@@ -41,21 +28,7 @@ export function CommentsSection() {
         </div>
       </form>
 
-      <ul className="mt-8 space-y-6">
-        {SAMPLE_COMMENTS.map((comment) => (
-          <li key={comment.name} className="flex gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-court-50 text-sm font-bold text-court-600 dark:bg-court-500/10 dark:text-court-400">
-              {comment.name.charAt(0)}
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-ink-900 dark:text-white">
-                {comment.name} <span className="ml-2 font-normal text-ink-400">{comment.date}</span>
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{comment.body}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <p className="mt-8 text-sm text-ink-400">Be the first to comment on this article.</p>
     </section>
   );
 }

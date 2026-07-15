@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, Users, Trophy } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import type { Article } from "@/types/content";
-
-const STATS = [
-  { label: "Families advised", value: "100+", icon: Users },
-  { label: "Years coaching", value: "12", icon: Trophy },
-  { label: "Sponsored placements", value: "0", icon: Mail },
-];
 
 export function Hero({ featured }: { featured: Article }) {
   return (
@@ -39,19 +33,6 @@ export function Hero({ featured }: { featured: Article }) {
               Join Newsletter
             </ButtonLink>
           </div>
-
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-ink-100 pt-8 dark:border-ink-800">
-            {STATS.map((stat) => (
-              <div key={stat.label}>
-                <dt className="flex items-center gap-1.5 text-xs font-medium text-ink-400">
-                  <stat.icon className="h-3.5 w-3.5" /> {stat.label}
-                </dt>
-                <dd className="mt-1 font-display text-2xl font-bold text-ink-950 dark:text-white">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <Link

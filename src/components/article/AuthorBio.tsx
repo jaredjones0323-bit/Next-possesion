@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Twitter, Linkedin, BadgeCheck } from "lucide-react";
+import { Twitter, Linkedin } from "lucide-react";
 import type { Author } from "@/types/content";
 
 export function AuthorBio({ author }: { author: Author }) {
@@ -10,10 +10,7 @@ export function AuthorBio({ author }: { author: Author }) {
           <Image src={author.avatar} alt={author.name} fill sizes="64px" className="object-cover" />
         </div>
         <div>
-          <p className="flex items-center gap-1.5 font-semibold text-ink-950 dark:text-white">
-            {author.name}
-            <BadgeCheck className="h-4 w-4 text-court-500" aria-label="Verified author" />
-          </p>
+          <p className="font-semibold text-ink-950 dark:text-white">{author.name}</p>
           <p className="text-sm text-ink-400">{author.role}</p>
           <p className="mt-3 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{author.bio}</p>
           <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-400">
