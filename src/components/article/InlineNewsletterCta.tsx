@@ -9,8 +9,8 @@ export function InlineNewsletterCta() {
           <Mail className="h-4 w-4" />
         </span>
         <div>
-          <p className="font-semibold text-ink-950 dark:text-white">Get gear picks in your inbox</p>
-          <p className="text-sm text-ink-500 dark:text-ink-400">Weekly reviews and deal alerts. No spam.</p>
+          <p className="font-semibold text-ink-950 dark:text-white">Get the playbook in your inbox</p>
+          <p className="text-sm text-ink-500 dark:text-ink-400">Weekly recruiting insight and coach advice. No spam.</p>
         </div>
       </div>
       <NewsletterForm />

@@ -7,7 +7,7 @@ import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Get in touch with the ${SITE.name} editorial team, or reach out about partnerships and corrections.`,
+  description: `Get in touch with ${SITE.name}, or reach out about partnerships and corrections.`,
   alternates: { canonical: `${SITE.url}/contact` },
 };
 
@@ -21,7 +21,7 @@ const CHANNELS = [
   {
     icon: Briefcase,
     title: "Partnerships",
-    body: "Brand and retailer partnership inquiries.",
+    body: "Brand partnership and collaboration inquiries.",
     email: "partners@nextpossession.com",
   },
   {
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Get in touch"
-        description="Have a question about a review, a correction to flag, or a partnership to discuss? We read every message."
+        description="Have a question about an article, a correction to flag, or a partnership to discuss? We read every message."
       />
 
       <Container className="grid gap-12 py-16 lg:grid-cols-[1fr_1.2fr]">

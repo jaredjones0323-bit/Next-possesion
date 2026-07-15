@@ -5,30 +5,30 @@ import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Editorial Guidelines",
-  description: `The editorial standards and fact-checking policy behind every ${SITE.name} review.`,
+  description: `The editorial standards behind every ${SITE.name} article.`,
   alternates: { canonical: `${SITE.url}/editorial-guidelines` },
 };
 
 const PRINCIPLES = [
   {
-    title: "Independence from advertisers",
-    body: "Ratings are determined solely by testing results. No brand or retailer can purchase a higher score, and our testers score products before commission rates are factored in.",
+    title: "Written from real coaching experience",
+    body: "Every article is written or reviewed by someone who has actually coached, recruited, or evaluated players at the level being discussed — not repackaged from other sites.",
   },
   {
-    title: "Hands-on testing required",
-    body: "We do not publish a rating or recommendation for any product our team hasn't personally tested using our documented methodology.",
+    title: "No pay-to-play, ever",
+    body: "We don't accept payment from training companies, recruiting services, or programs in exchange for favorable coverage or placement.",
   },
   {
-    title: "Transparent methodology",
-    body: "Every review discloses how a product was tested, for how long, and by whom, so readers can judge our process for themselves.",
+    title: "Guarantees are a red flag we won't use",
+    body: "We never promise specific recruiting outcomes, scholarships, or rankings. Advice is framed around what's actually in a player's or family's control.",
   },
   {
-    title: "Regular re-verification",
-    body: "Buying guides are reviewed at least quarterly. If a product is discontinued or a better alternative emerges, we update the guide promptly.",
+    title: "Content stays current",
+    body: "Recruiting rules, timelines, and norms change. Articles are revisited periodically and updated when something material changes — the 'Updated' date at the top reflects that.",
   },
   {
     title: "Correction policy",
-    body: "If we get something wrong, we fix it. Material corrections are noted with an updated date and, where relevant, a visible correction note.",
+    body: "If we get something wrong, we fix it and note the correction. Accuracy matters more than being right the first time.",
   },
 ];
 
@@ -56,13 +56,9 @@ export default function EditorialGuidelinesPage() {
         </div>
 
         <div className="mt-14 rounded-2xl border border-ink-100 bg-ink-50/60 p-6 text-sm leading-relaxed text-ink-600 dark:border-ink-800 dark:bg-ink-900/40 dark:text-ink-300">
-          For details on how individual products are tested and scored, see{" "}
-          <a href="/how-we-test" className="font-medium text-court-600 hover:underline">
-            How We Test
-          </a>
-          . For our affiliate relationships, see our{" "}
-          <a href="/affiliate-disclosure" className="font-medium text-court-600 hover:underline">
-            Affiliate Disclosure
+          Have a correction or a question about our editorial process? Reach out through our{" "}
+          <a href="/contact" className="font-medium text-court-600 hover:underline">
+            Contact page
           </a>
           .
         </div>

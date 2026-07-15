@@ -11,10 +11,10 @@ export function FeaturedCategories() {
       <Container>
         <SectionHeading
           eyebrow="Explore"
-          title="Shop by category"
-          description="Every guide starts with hands-on testing. Find the gear category you're shopping for."
+          title="Find your next read"
+          description="Five topics that cover the entire journey — from AAU tryouts to signing day."
         />
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {categories.map((category) => {
             const Icon = iconMap[category.icon];
             return (

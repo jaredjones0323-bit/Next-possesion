@@ -60,8 +60,8 @@ export function getFeaturedArticles(): Article[] {
   return getAllArticles().filter((a) => a.featured);
 }
 
-export function getEditorsPicks(): Article[] {
-  return getAllArticles().filter((a) => a.editorsPick);
+export function getCoachesPicks(): Article[] {
+  return getAllArticles().filter((a) => a.coachesPick);
 }
 
 export function getTrendingArticles(): Article[] {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, Search, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, Search, X, Mail } from "lucide-react";
 import { categories } from "@/data/categories";
 import { iconMap } from "@/lib/icon-map";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,8 @@ import { SearchModal } from "@/components/layout/SearchModal";
 import { ButtonLink } from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { label: "Blog", href: "/blog" },
+  { label: "Articles", href: "/blog" },
+  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -59,7 +60,7 @@ export function Navbar() {
               className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-950 dark:text-ink-200 dark:hover:bg-ink-900 dark:hover:text-white"
               aria-expanded={megaOpen}
             >
-              Categories
+              Topics
               <ChevronDown className={cn("h-4 w-4 transition-transform", megaOpen && "rotate-180")} />
             </button>
 
@@ -114,8 +115,8 @@ export function Navbar() {
           </button>
           <ThemeToggle />
           <div className="hidden lg:block">
-            <ButtonLink href="/blog" size="sm" icon={ArrowRight}>
-              Read Latest
+            <ButtonLink href="/newsletter" size="sm" icon={Mail}>
+              Join Newsletter
             </ButtonLink>
           </div>
           <button
@@ -139,7 +140,7 @@ export function Navbar() {
             </button>
           </div>
           <div className="flex flex-col gap-1 px-6 py-4">
-            <p className="mb-1 mt-3 text-xs font-bold uppercase tracking-wide text-ink-400">Categories</p>
+            <p className="mb-1 mt-3 text-xs font-bold uppercase tracking-wide text-ink-400">Topics</p>
             {categories.map((category) => (
               <Link
                 key={category.slug}
@@ -159,6 +160,11 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-4">
+              <ButtonLink href="/newsletter" icon={Mail} className="w-full">
+                Join Newsletter
+              </ButtonLink>
+            </div>
           </div>
         </div>
       )}

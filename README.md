@@ -1,6 +1,10 @@
 # Next Possession
 
-Premium affiliate blog for basketball gear reviews, buying guides, and comparisons — built with Next.js 14 (App Router), TypeScript, and Tailwind CSS.
+Basketball recruiting and player development education for AAU and high school players and their families — built with Next.js 14 (App Router), TypeScript, and Tailwind CSS.
+
+> "You cannot control the last possession. You can only control the next one."
+
+Next Possession is written from a real coach's perspective: honest, direct advice on recruiting, AAU, player development, coach perspective, and parent education — no training-company sales pitch, no motivational-influencer fluff.
 
 ## Tech Stack
 
@@ -33,7 +37,7 @@ npm run typecheck
 ```
 next-possession/
 ├── content/
-│   └── articles/                # All blog posts as .mdx files (see below)
+│   └── articles/                # All articles as .mdx files (see below)
 ├── public/                      # Static assets
 ├── src/
 │   ├── app/                     # Next.js App Router routes
@@ -44,46 +48,55 @@ next-possession/
 │   │   ├── robots.ts            # robots.txt
 │   │   ├── globals.css
 │   │   ├── blog/
-│   │   │   ├── page.tsx         # Blog listing (search, filter, sort, pagination)
+│   │   │   ├── page.tsx         # Articles listing (search, filter, sort, pagination)
 │   │   │   └── [slug]/page.tsx  # Article template
-│   │   ├── category/[slug]/page.tsx
+│   │   ├── category/[slug]/page.tsx   # Recruiting / AAU / Player Development / Coach Perspective / Parent Education
 │   │   ├── authors/[slug]/page.tsx
 │   │   ├── search/page.tsx
+│   │   ├── resources/page.tsx   # Digital guides + coaching services (roadmap page)
+│   │   ├── newsletter/page.tsx  # Dedicated newsletter signup page
 │   │   ├── about/page.tsx
 │   │   ├── contact/page.tsx
 │   │   ├── privacy-policy/page.tsx
 │   │   ├── terms/page.tsx
-│   │   ├── affiliate-disclosure/page.tsx
 │   │   ├── editorial-guidelines/page.tsx
-│   │   ├── how-we-test/page.tsx
 │   │   ├── not-found.tsx        # 404 page
 │   │   └── api/search/route.ts  # Instant search endpoint
 │   ├── components/
-│   │   ├── ui/                  # Design system: Button, Card, Badge, Accordion, RatingStars,
-│   │   │                          ProductCard, ComparisonTable, ArticleCard, NewsletterForm...
+│   │   ├── ui/                  # Design system: Button, Card, Badge, Accordion, ArticleCard, NewsletterForm...
 │   │   ├── layout/               # Navbar (mega menu + mobile menu), Footer, ThemeToggle, SearchModal
-│   │   ├── home/                 # Hero, FeaturedCategories, LatestArticles, EditorsPicks,
-│   │   │                          MostPopular, BestProducts, TrendingReviews, SocialProof, HomeFaq
-│   │   ├── article/               # Breadcrumbs, TableOfContents, KeyTakeaways, ExpertVerdict,
+│   │   ├── home/                 # Hero, FeaturedCategories, LatestArticles, CoachesPicks,
+│   │   │                          MostPopular, TrendingArticles, SocialProof, HomeFaq
+│   │   ├── article/               # Breadcrumbs, TableOfContents, KeyTakeaways, CoachesTake,
 │   │   │                          ArticleFaq, AuthorBio, ShareButtons, Sources, CommentsSection...
 │   │   ├── blog/                  # ArticleExplorer (client-side search/filter/sort/pagination)
 │   │   ├── contact/                # ContactForm
 │   │   └── providers/              # ThemeProvider (next-themes)
 │   ├── data/
-│   │   ├── categories.ts        # All category metadata (single source of truth)
-│   │   └── authors.ts           # Author profiles
+│   │   ├── categories.ts        # The 5 content pillars (single source of truth)
+│   │   └── authors.ts           # Coach/contributor profiles
 │   ├── lib/
 │   │   ├── articles.ts          # Reads & parses content/articles/*.mdx (gray-matter + reading-time)
-│   │   ├── schema.ts            # JSON-LD builders (Article, FAQ, Breadcrumb, Product, Org, Website)
+│   │   ├── schema.ts            # JSON-LD builders (Article, FAQ, Breadcrumb, Org, Website)
 │   │   ├── toc.ts                # Extracts H2/H3 headings for the sticky table of contents
 │   │   ├── icon-map.ts
 │   │   └── utils.ts              # cn(), date formatting, SITE constants
 │   └── types/
-│       └── content.ts           # Article, Product, Author, Category types
+│       └── content.ts           # Article, Author, Category types
 ├── tailwind.config.ts
 ├── next.config.mjs
 └── tsconfig.json
 ```
+
+## Content Pillars
+
+Every article belongs to one of five categories, defined in `src/data/categories.ts`:
+
+1. **Recruiting** — how the process actually works, timelines, D1/D2/D3/NAIA/juco, emailing coaches
+2. **AAU Basketball** — choosing a team, exposure, live periods, shoe circuits
+3. **Player Development** — coachability, basketball IQ, decision-making, habits (not drills)
+4. **Coach Perspective** — what coaches actually notice, told directly by a coach
+5. **Parent Education** — how to support a player's journey without working against it
 
 ## Content & CMS
 
@@ -104,39 +117,27 @@ next-possession/
 title: "Article Title"
 slug: "article-title" # must match the filename
 description: "SEO meta description, 150-160 characters."
-category: "basketball-shoes" # must match a slug in src/data/categories.ts
-tags: ["shoes", "buying-guide"]
+category: "recruiting" # must match a slug in src/data/categories.ts
+tags: ["recruiting", "college-basketball"]
 authorSlug: "marcus-reid" # must match a slug in src/data/authors.ts
 publishedAt: "2026-01-08"
 updatedAt: "2026-06-24"
 heroImage: "https://images.unsplash.com/..."
 heroImageAlt: "Descriptive alt text"
 featured: true # eligible for homepage hero
-editorsPick: true # appears in Editor's Picks
-trending: true # appears in Trending Reviews
+coachesPick: true # appears in Coach's Picks
+trending: true # appears in Trending Articles
 popular: true # appears in Most Popular
-articleType: "review" # review | guide | comparison | news
+articleType: "guide" # guide | perspective | story | news
 keyTakeaways:
   - "Bullet point summary readers can scan"
+coachesTake: "A one or two sentence, first-person pull-quote-style summary — rendered in the Coach's Take box near the end of the article."
 faqs:
   - question: "..."
     answer: "..."
 sources:
   - label: "Source name"
     url: "https://..."
-products: # optional — powers comparison table, product cards, and Product schema
-  - id: "unique-product-id"
-    name: "Product Name"
-    brand: "Brand"
-    image: "https://..."
-    price: "$99.99"
-    rating: { overall: 4.5, performance: 4.4, value: 4.9, durability: 4.3, comfort: 4.5 }
-    badge: "Editor's Choice" # optional
-    pros: ["..."]
-    cons: ["..."]
-    affiliateUrl: "https://..."
-    retailer: "Amazon"
-    summary: "One-sentence takeaway"
 ---
 
 Markdown/MDX body content goes here. `##` headings automatically populate the
@@ -145,7 +146,7 @@ sticky table of contents; `###` headings are nested under them.
 
 ### Adding a category
 
-Add an entry to the `categories` array in `src/data/categories.ts`. The slug, icon (see `src/lib/icon-map.ts` for available icons), and SEO intro copy will automatically flow into the mega menu, footer, homepage category grid, and generate a category page at `/category/[slug]`.
+Add an entry to the `categories` array in `src/data/categories.ts`. The slug, icon (see `src/lib/icon-map.ts` for available icons), and SEO intro copy will automatically flow into the mega menu, footer, homepage topic grid, and generate a category page at `/category/[slug]`.
 
 ### Adding an author
 
@@ -158,7 +159,7 @@ Tags are fully dynamic — just add strings to an article's `tags` array. `getAl
 ## SEO
 
 - Per-page `generateMetadata` with canonical URLs, Open Graph, and Twitter Card data
-- JSON-LD structured data: `Organization`, `WebSite` (with `SearchAction`), `Article`, `BreadcrumbList`, `FAQPage`, and `Product`/`Review` (via `src/lib/schema.ts`)
+- JSON-LD structured data: `Organization`, `WebSite` (with `SearchAction`), `Article`, `BreadcrumbList`, and `FAQPage` (via `src/lib/schema.ts`)
 - Dynamic `sitemap.xml` (`src/app/sitemap.ts`) covering all articles, categories, and authors
 - `robots.txt` (`src/app/robots.ts`)
 - Dynamic Open Graph image generation via `next/og`
@@ -166,7 +167,7 @@ Tags are fully dynamic — just add strings to an article's `tags` array. `getAl
 
 ## Design System
 
-Brand color is a warm court-orange (`court-*` in `tailwind.config.ts`) paired with a near-black ink neutral scale (`ink-*`) for premium contrast in both light and dark mode. Typography uses Sora (display) + Inter (body) via `next/font`. All interactive components (`Accordion`, `SearchModal`, `ArticleExplorer`, `ThemeToggle`) are client components; everything else is a server component for performance.
+Brand color is a warm court-orange (`court-*` in `tailwind.config.ts`) paired with a near-black ink neutral scale (`ink-*`) — black, white, and orange, per the brand guide. Typography uses Sora (display) + Inter (body) via `next/font`. All interactive components (`Accordion`, `SearchModal`, `ArticleExplorer`, `ThemeToggle`) are client components; everything else is a server component for performance.
 
 ## Deployment
 
@@ -181,9 +182,9 @@ Other hosts (Netlify, self-hosted Node, Docker) work too — this is a standard 
 
 ## Recommended Next Steps
 
-- **Real product images & affiliate IDs**: swap the Unsplash placeholder images and `tag=nextpossession-20` placeholder Amazon search links in `content/articles/*.mdx` for real product photography and your actual affiliate tracking links.
-- **Newsletter + comments backends**: `NewsletterForm` and `CommentsSection` currently simulate submission client-side. Wire them to an ESP (e.g., ConvertKit, Resend Audiences) and a comments provider (e.g., Giscus) respectively.
+- **Newsletter + comments backends**: `NewsletterForm` and `CommentsSection` currently simulate submission client-side. Wire the newsletter form to an ESP (ConvertKit, Beehiiv, Substack) and comments to a provider like Giscus.
+- **Resources page → real commerce**: `/resources` presents the Digital Guides and Coaching Services from the brand vision as an honest "coming soon" roadmap with an email waitlist. When those products are ready, wire them to a real checkout (Stripe, Gumroad) and a booking tool (Calendly) for consultations rather than building a fake purchase flow ahead of time.
 - **Analytics**: add a privacy-respecting analytics snippet (Plausible, Vercel Analytics) in `src/app/layout.tsx`.
-- **Image domain**: update `next.config.mjs` `images.remotePatterns` if you move product imagery to a different CDN.
 - **Headless CMS migration path**: if editors need a UI instead of committing `.mdx` files, swap the filesystem reads in `src/lib/articles.ts` for calls to a headless CMS SDK — no other file needs to change, since every page consumes articles through that module.
-- **Real fact-checking/legal copy**: the Privacy Policy, Terms, and Affiliate Disclosure pages are solid starting templates but should be reviewed by counsel before launch.
+- **Legal review**: the Privacy Policy, Terms, and Editorial Guidelines pages are solid starting templates but should be reviewed by counsel, particularly the "no guaranteed outcomes" language once paid services launch.
+- **Author roster**: currently two coach personas (`src/data/authors.ts`). Expand as real contributors join.

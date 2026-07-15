@@ -5,24 +5,24 @@ import { buildFaqSchema } from "@/lib/schema";
 
 const FAQS = [
   {
-    question: "How does Next Possession make money?",
+    question: "Is Next Possession a training company or recruiting service?",
     answer:
-      "We earn a commission when you buy through affiliate links on our site, at no extra cost to you. This never influences our ratings — see our Affiliate Disclosure and Editorial Guidelines for details.",
+      "No. We're an independent basketball education platform — free articles and honest advice written from a coach's perspective. We do plan to offer optional paid services like film breakdowns and recruiting evaluations, but the free content is never gated behind them and never shaped to upsell them.",
   },
   {
-    question: "Do you actually test every product you review?",
+    question: "Who writes the content?",
     answer:
-      "Yes. Every product featured in a review or comparison guide is purchased or provided for testing and used through our standardized protocol. We detail our exact process on the How We Test page.",
+      "Next Possession is founded and written by Marcus Reid, a high school and AAU basketball coach with over a decade of experience evaluating players and advising families through recruiting. See the About page for the full team.",
   },
   {
-    question: "How often is content updated?",
+    question: "Is this content specific to one region or level of basketball?",
     answer:
-      "Buying guides are reviewed at least quarterly and updated sooner if a product is discontinued, a price changes significantly, or a better alternative launches. Check the 'Updated' date at the top of any article.",
+      "The advice is written to apply broadly — AAU, high school, and college recruiting operate similarly across most of the country. Where rules or norms vary regionally (like state association guidelines), we note it directly in the article.",
   },
   {
-    question: "Can brands pay for a better review?",
+    question: "Do you guarantee recruiting outcomes or scholarships?",
     answer:
-      "No. We do not accept payment in exchange for positive coverage, and our testers do not know embargo pricing until after scoring is complete. Sponsored content, if ever published, is always clearly labeled.",
+      "No, and we're skeptical of anyone who does. Recruiting outcomes depend on a player's ability, fit, and circumstances that no publication or service can guarantee. Our goal is to help players and families make better decisions — not to promise a specific result.",
   },
 ];
 

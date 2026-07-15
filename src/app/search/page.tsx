@@ -6,7 +6,7 @@ import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search Next Possession's basketball gear reviews and buying guides.",
+  description: "Search Next Possession's articles on recruiting, AAU, player development, and more.",
   alternates: { canonical: `${SITE.url}/search` },
   robots: { index: false, follow: true },
 };

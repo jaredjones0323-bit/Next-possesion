@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ShieldCheck, FlaskConical, Users, Target } from "lucide-react";
+import { Compass, ShieldCheck, MessageSquareText, Users } from "lucide-react";
 import { authors } from "@/data/authors";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -8,30 +8,30 @@ import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `Learn about ${SITE.name}'s mission, editorial team, and testing standards.`,
+  description: `Learn about ${SITE.name}'s mission, philosophy, and the coach behind it.`,
   alternates: { canonical: `${SITE.url}/about` },
 };
 
 const VALUES = [
   {
-    icon: FlaskConical,
-    title: "Hands-on testing",
-    body: "Every product we recommend is bought or provided for testing and used through our standardized on-court protocol.",
+    icon: MessageSquareText,
+    title: "A coach's honesty",
+    body: "Everything reads like a coach telling a player what they actually need to hear — not a motivational influencer, not a training company's sales pitch.",
   },
   {
     icon: ShieldCheck,
-    title: "Editorial independence",
-    body: "Affiliate revenue never determines a rating. Testers score products blind to retail pricing.",
+    title: "No pay-to-play",
+    body: "We don't accept payment for favorable coverage, and we're not a recruiting service in disguise. The free content is never shaped to upsell anything.",
   },
   {
-    icon: Target,
-    title: "Data over hype",
-    body: "We measure what we can — traction cycles, rim shake, shot volume — instead of relying on marketing copy.",
+    icon: Compass,
+    title: "Decision-making over hype",
+    body: "We'd rather teach a player to think clearly about their next decision than chase rankings, offers, or follower counts.",
   },
   {
     icon: Users,
-    title: "Built by players and coaches",
-    body: "Our editorial team has combined decades of coaching, playing, and strength & conditioning experience.",
+    title: "Built from the sideline",
+    body: "Every article comes from real coaching and recruiting experience — not secondhand research or generic advice.",
   },
 ];
 
@@ -40,12 +40,24 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About Us"
-        title="We test basketball gear so you don't have to guess"
-        description="Next Possession is an independent publication covering basketball shoes, hoops, training equipment, and wearables — built by coaches, trainers, and players who were tired of marketing-driven reviews."
+        title="Honest advice from a real coach"
+        description="Next Possession is a basketball education platform for AAU and high school players, and the families navigating the road to college basketball alongside them."
       />
 
       <Container className="py-16">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="mx-auto max-w-2xl rounded-3xl bg-ink-950 p-10 text-center text-white sm:p-14">
+          <p className="text-display-sm font-display font-semibold leading-tight">
+            &ldquo;You cannot control the last possession.
+            <br />
+            You can only control the next one.&rdquo;
+          </p>
+          <p className="mt-6 text-sm text-white/60">
+            Whether a player had a bad game, got cut, isn&apos;t being recruited, or wants to maximize
+            their opportunities — the focus is always on what comes next.
+          </p>
+        </div>
+
+        <div className="mt-20 grid gap-6 sm:grid-cols-2">
           {VALUES.map((value) => (
             <div key={value.title} className="rounded-2xl border border-ink-100 bg-white p-6 dark:border-ink-800 dark:bg-ink-900">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-court-50 text-court-600 dark:bg-court-500/10 dark:text-court-400">
@@ -57,35 +69,59 @@ export default function AboutPage() {
           ))}
         </div>
 
+        <div className="mt-20 grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="text-display-sm font-display font-semibold text-ink-950 dark:text-white">
+              Our mission
+            </h2>
+            <ul className="mt-6 space-y-4">
+              {[
+                "Help basketball players make better decisions throughout their basketball journey.",
+                "Provide transparency around how recruiting actually works.",
+                "Teach players what coaches actually value — habits, IQ, and character, not just highlights.",
+                "Help families avoid the recruiting mistakes we see over and over.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3 text-ink-600 dark:text-ink-300">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-court-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-ink-100 bg-white p-8 dark:border-ink-800 dark:bg-ink-900">
+            <p className="text-sm font-bold uppercase tracking-wide text-court-600 dark:text-court-400">
+              What we&apos;re not
+            </p>
+            <p className="mt-3 text-ink-600 dark:text-ink-300">
+              Next Possession is not another basketball training company, and it&apos;s not a
+              motivational influencer account. It&apos;s a trusted source for honest advice — the
+              kind a good coach gives a player who&apos;s actually trying to get better.
+            </p>
+          </div>
+        </div>
+
         <div className="mt-20">
           <h2 className="text-display-sm font-display font-semibold text-ink-950 dark:text-white">
-            Meet the editorial team
+            Who&apos;s behind it
           </h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {authors.map((author) => (
               <a
                 key={author.slug}
                 href={`/authors/${author.slug}`}
-                className="rounded-2xl border border-ink-100 bg-white p-6 text-center transition-shadow hover:shadow-card dark:border-ink-800 dark:bg-ink-900"
+                className="flex gap-5 rounded-2xl border border-ink-100 bg-white p-6 transition-shadow hover:shadow-card dark:border-ink-800 dark:bg-ink-900"
               >
-                <div className="relative mx-auto h-20 w-20 overflow-hidden rounded-full">
-                  <Image src={author.avatar} alt={author.name} fill sizes="80px" className="object-cover" />
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full">
+                  <Image src={author.avatar} alt={author.name} fill sizes="64px" className="object-cover" />
                 </div>
-                <p className="mt-4 font-semibold text-ink-950 dark:text-white">{author.name}</p>
-                <p className="text-sm text-ink-400">{author.role}</p>
+                <div>
+                  <p className="font-semibold text-ink-950 dark:text-white">{author.name}</p>
+                  <p className="text-sm text-ink-400">{author.role}</p>
+                  <p className="mt-2 line-clamp-2 text-sm text-ink-500 dark:text-ink-400">{author.bio}</p>
+                </div>
               </a>
             ))}
           </div>
-        </div>
-
-        <div className="mt-20 rounded-3xl bg-ink-950 p-10 text-white sm:p-14">
-          <h2 className="text-display-sm font-display font-semibold">Our mission</h2>
-          <p className="mt-4 max-w-2xl leading-relaxed text-white/70">
-            Basketball gear is a real investment — for parents outfitting a kid&apos;s first season, for
-            rec league players buying their fifth pair of shoes, for coaches building out a gym.
-            Next Possession exists to make those decisions easier with rigorous, independent testing
-            and buying guides you can actually trust.
-          </p>
         </div>
       </Container>
     </>

@@ -50,10 +50,10 @@ export default function OpengraphImage() {
           {SITE.name}
         </div>
         <div style={{ display: "flex", fontSize: 64, fontWeight: 700, marginTop: 40, maxWidth: 900, lineHeight: 1.1 }}>
-          Basketball gear, tested to the buzzer.
+          The Playbook for the Next Level.
         </div>
         <div style={{ display: "flex", fontSize: 26, marginTop: 24, color: "#b1b8c8", maxWidth: 800 }}>
-          Independent reviews, buying guides, and comparisons.
+          Honest recruiting advice for basketball players and families.
         </div>
       </div>
     ),

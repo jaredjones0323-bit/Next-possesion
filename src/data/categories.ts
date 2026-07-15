@@ -2,70 +2,59 @@ import type { Category } from "@/types/content";
 
 export const categories: Category[] = [
   {
-    slug: "basketball-shoes",
-    name: "Basketball Shoes",
-    shortName: "Shoes",
+    slug: "recruiting",
+    name: "Recruiting",
+    shortName: "Recruiting",
     description:
-      "In-depth performance reviews and buying guides for basketball shoes — traction tests, cushion breakdowns, and fit notes from real runs.",
+      "How college recruiting actually works — emailing coaches, building a profile, official vs. unofficial visits, NCAA rules, and realistic timelines.",
     seoIntro:
-      "Choosing the right basketball shoe affects everything from ankle stability to first-step explosiveness. Our team runs every pair through court testing — traction on dust, cushion response on hard courts, and multi-week durability checks — before it earns a spot in a guide.",
-    icon: "footprints",
+      "Most families learn how recruiting works too late, after avoidable mistakes are already made. This is a straight, no-hype breakdown of how college coaches actually evaluate and recruit players — from building a profile and reaching out, to understanding D1, D2, D3, NAIA, and juco pathways.",
+    icon: "graduation-cap",
     color: "court",
   },
   {
-    slug: "training-equipment",
-    name: "Training Equipment",
-    shortName: "Training",
+    slug: "aau",
+    name: "AAU Basketball",
+    shortName: "AAU",
     description:
-      "Ball machines, resistance gear, agility ladders, and shooting aids reviewed for real skill development, not gimmicks.",
+      "Choosing the right AAU team, understanding exposure myths, navigating shoe circuits and live periods, and getting the most out of summer basketball.",
     seoIntro:
-      "Good training gear should shave weeks off your development curve. We test shooting machines, resistance bands, and skill-development tools against a simple bar: does it produce measurable improvement, or is it just a novelty?",
-    icon: "dumbbell",
+      "AAU basketball is where most exposure decisions get made — and most misinformation lives. This covers what actually drives exposure, how to evaluate a team beyond its name, and how to approach live periods and showcases without wasting a summer.",
+    icon: "users",
     color: "ink",
   },
   {
-    slug: "hoops-systems",
-    name: "Hoops & Systems",
-    shortName: "Hoops",
+    slug: "player-development",
+    name: "Player Development",
+    shortName: "Development",
     description:
-      "In-ground, portable, and wall-mounted basketball hoop reviews for driveways, garages, and backyard courts.",
+      "Not drills — coachability, basketball IQ, decision-making, communication, and the habits that actually separate players who get better.",
     seoIntro:
-      "A hoop system is a multi-year investment — rim stability, backboard rigidity, and base weight matter more than marketing renders. We compare portable, in-ground, and mounted systems side by side on install time, wind resistance, and rim durability.",
-    icon: "circle-dot",
+      "Skill work matters, but it's not what separates players who keep improving from players who plateau. This covers the habits, decision-making, and basketball IQ that coaches actually notice and develop over a career.",
+    icon: "trending-up",
     color: "court",
   },
   {
-    slug: "apparel",
-    name: "Jerseys & Apparel",
-    shortName: "Apparel",
+    slug: "coach-perspective",
+    name: "Coach Perspective",
+    shortName: "Coach's View",
     description:
-      "Performance apparel, compression gear, and jerseys tested for breathability, fit, and durability through real training blocks.",
+      "What coaches actually notice, what stats don't tell you, and honest observations from the sideline and film room.",
     seoIntro:
-      "The right apparel regulates temperature and range of motion so gear stops being a variable. We evaluate fabric weight, stitching quality, and fit consistency across sizing runs before recommending anything.",
-    icon: "shirt",
+      "This is the perspective most players never get to hear directly — what a coach is actually thinking while watching film or standing on the sideline at a live period. No filter, no fluff, just what coaches notice and why.",
+    icon: "eye",
     color: "ink",
   },
   {
-    slug: "wearables",
-    name: "Wearables & Trackers",
-    shortName: "Wearables",
+    slug: "parent-education",
+    name: "Parent Education",
+    shortName: "Parents",
     description:
-      "Smartwatches, vertical jump trackers, and performance sensors reviewed for accuracy and real training value.",
+      "How parents can help instead of accidentally hurting recruiting — communication, realistic expectations, and navigating playing-time conversations.",
     seoIntro:
-      "Player-tracking wearables promise data — we verify it. Each device is benchmarked against manual timing and video breakdown to confirm the numbers you're training around are actually trustworthy.",
-    icon: "activity",
+      "Parents want to help. Sometimes that instinct works against a player's recruiting without anyone realizing it. This is direct, practical guidance for parents on communication, expectations, and how to actually support a player's journey.",
+    icon: "heart-handshake",
     color: "court",
-  },
-  {
-    slug: "accessories",
-    name: "Bags & Accessories",
-    shortName: "Accessories",
-    description:
-      "Gym bags, ankle braces, grip aids, and the small gear that quietly makes a big difference in a training routine.",
-    seoIntro:
-      "Accessories rarely headline a gear guide, but the right ankle brace or ball bag solves a real problem. We test the supporting cast of basketball gear with the same rigor as the marquee items.",
-    icon: "backpack",
-    color: "ink",
   },
 ];
 

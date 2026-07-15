@@ -4,12 +4,12 @@ const SAMPLE_COMMENTS = [
   {
     name: "Trevor H.",
     date: "2 weeks ago",
-    body: "Picked up the top pick from this guide after months of undecided rotating between three pairs. The traction difference on a dusty gym floor is night and day.",
+    body: "This is the first breakdown of the recruiting timeline that didn't make me feel like I was already behind. Sharing this with our whole AAU team's parents.",
   },
   {
     name: "Aaliyah S.",
     date: "1 month ago",
-    body: "Appreciate that you actually list the cons instead of just selling. Went with the budget pick and it's been solid for rec league.",
+    body: "Appreciate that this isn't trying to sell me a program. Just straight advice from someone who's actually been on the other side of the recruiting table.",
   },
 ];
 
@@ -28,7 +28,7 @@ export function CommentsSection() {
         <textarea
           id="comment"
           rows={3}
-          placeholder="Share your experience with this gear..."
+          placeholder="Share your experience or ask a question..."
           className="w-full resize-none rounded-xl border border-ink-100 bg-ink-50/50 p-3 text-sm outline-none focus:ring-2 focus:ring-court-500 dark:border-ink-800 dark:bg-ink-950 dark:text-white"
         />
         <div className="mt-3 flex justify-end">

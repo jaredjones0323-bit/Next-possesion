@@ -1,40 +1,45 @@
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 const TESTIMONIALS = [
   {
     quote:
-      "The shoe width guide alone saved me two returns. This is the only gear site I trust before buying.",
-    name: "Jordan T.",
-    role: "High school varsity coach",
+      "The recruiting timeline article alone changed how we approached junior year. We stopped waiting to be discovered and started actually building relationships with coaches.",
+    name: "Sarah K.",
+    role: "Parent of a Class of 2027 player",
   },
   {
     quote:
-      "Finally a review site that shows actual testing data instead of just reposting spec sheets. The hoop comparison was incredibly thorough.",
-    name: "Priya M.",
-    role: "Parent & weekend league player",
+      "Finally, advice that isn't trying to sell me a training program. It's just straight, honest information from someone who's actually coached at this level.",
+    name: "Marcus T.",
+    role: "AAU coach",
   },
   {
     quote:
-      "Bought the shooting machine after reading their breakdown — exactly as described. Shot volume is night and day.",
-    name: "Chris B.",
-    role: "AAU trainer",
+      "The film breakdown piece made me completely rethink what I was sending to coaches. I was leading with highlights instead of showing them who I actually am as a player.",
+    name: "Devon R.",
+    role: "High school junior, class of 2027",
   },
 ];
 
-const LOGOS = ["SLAM", "Hoops Weekly", "Court Report", "Baseline", "The Rim"];
+const TRUST_POINTS = [
+  "Written by a coach, not a marketer",
+  "No pay-to-play or sponsored rankings",
+  "Free content, always",
+];
 
 export function SocialProof() {
   return (
     <section className="border-t border-ink-100 py-20 dark:border-ink-800">
       <Container>
-        <p className="text-center text-xs font-bold uppercase tracking-wide text-ink-400">
-          As referenced by
-        </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-60">
-          {LOGOS.map((logo) => (
-            <span key={logo} className="font-display text-lg font-bold text-ink-400">
-              {logo}
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          {TRUST_POINTS.map((point) => (
+            <span
+              key={point}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-ink-400"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-court-500" />
+              {point}
             </span>
           ))}
         </div>
@@ -45,11 +50,7 @@ export function SocialProof() {
               key={testimonial.name}
               className="flex flex-col rounded-2xl border border-ink-100 bg-white p-6 dark:border-ink-800 dark:bg-ink-900"
             >
-              <div className="flex gap-0.5 text-court-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
+              <Quote className="h-5 w-5 text-court-500" />
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>

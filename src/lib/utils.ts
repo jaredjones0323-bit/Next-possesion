@@ -32,9 +32,9 @@ export function slugify(input: string): string {
 
 export const SITE = {
   name: "Next Possession",
-  tagline: "Basketball gear, tested to the buzzer.",
+  tagline: "The Playbook for the Next Level.",
   description:
-    "Next Possession is an independent basketball gear publication. We test shoes, hoops, training equipment, and wearables so you can buy with confidence.",
+    "Next Possession helps basketball players and families navigate AAU, recruiting, and the journey to college basketball — honest advice from a real high school and college coach.",
   url: "https://www.nextpossession.com",
   twitter: "@nextpossession",
   locale: "en_US",

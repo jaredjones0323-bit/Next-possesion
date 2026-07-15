@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/ui/ArticleCard";
 
-export function EditorsPicks({ articles }: { articles: Article[] }) {
+export function CoachesPicks({ articles }: { articles: Article[] }) {
   if (articles.length === 0) return null;
 
   return (
@@ -11,8 +11,8 @@ export function EditorsPicks({ articles }: { articles: Article[] }) {
       <Container>
         <SectionHeading
           eyebrow="Hand-picked"
-          title="Editor's Picks"
-          description="The gear our editorial team stands behind without reservation — tested, retested, and worth every dollar."
+          title="Coach's Picks"
+          description="The pieces Coach Reid tells every player and parent to read first — no fluff, just what actually matters."
         />
         <div className="mt-10 space-y-5">
           {articles.slice(0, 3).map((article) => (

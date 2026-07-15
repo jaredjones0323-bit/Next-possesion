@@ -7,15 +7,14 @@ import { SITE } from "@/lib/utils";
 
 const COMPANY_LINKS = [
   { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Resources", href: "/resources" },
   { label: "Editorial Guidelines", href: "/editorial-guidelines" },
-  { label: "How We Test", href: "/how-we-test" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const LEGAL_LINKS = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms" },
-  { label: "Affiliate Disclosure", href: "/affiliate-disclosure" },
 ];
 
 export function Footer() {
@@ -50,7 +49,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-wide text-ink-400">Categories</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-wide text-ink-400">Topics</p>
             <ul className="space-y-2.5">
               {categories.map((category) => (
                 <li key={category.slug}>
@@ -95,9 +94,9 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-wide text-ink-400">The Fast Break</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-wide text-ink-400">The Playbook</p>
             <p className="mb-4 text-sm text-ink-500 dark:text-ink-400">
-              One email a week. New gear reviews, deal alerts, and buying guides.
+              Recruiting updates and coach insight, one email a week.
             </p>
             <NewsletterForm />
           </div>
@@ -105,13 +104,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-ink-100 py-6 text-xs text-ink-400 dark:border-ink-800 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} Next Possession. All rights reserved.</p>
-          <p>
-            As an affiliate, we may earn a commission from qualifying purchases at no extra cost to you.{" "}
-            <Link href="/affiliate-disclosure" className="underline hover:text-court-600">
-              Learn more
-            </Link>
-            .
-          </p>
+          <p>Next Possession provides basketball education and does not guarantee recruiting outcomes.</p>
         </div>
       </Container>
     </footer>

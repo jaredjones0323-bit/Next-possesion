@@ -6,23 +6,15 @@ import { getAllArticles, getArticleWithAuthor, getRelatedArticles } from "@/lib/
 import { getCategoryBySlug } from "@/data/categories";
 import { extractToc } from "@/lib/toc";
 import { formatDate, SITE } from "@/lib/utils";
-import {
-  buildArticleSchema,
-  buildBreadcrumbSchema,
-  buildFaqSchema,
-  buildProductReviewSchema,
-} from "@/lib/schema";
+import { buildArticleSchema, buildBreadcrumbSchema, buildFaqSchema } from "@/lib/schema";
 
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Breadcrumbs } from "@/components/article/Breadcrumbs";
 import { ArticleMeta } from "@/components/article/ArticleMeta";
 import { TableOfContents } from "@/components/article/TableOfContents";
-import { AffiliateDisclosureBanner } from "@/components/article/AffiliateDisclosureBanner";
 import { KeyTakeaways } from "@/components/article/KeyTakeaways";
-import { ComparisonTable } from "@/components/ui/ComparisonTable";
-import { ProductCard } from "@/components/ui/ProductCard";
-import { ExpertVerdict } from "@/components/article/ExpertVerdict";
+import { CoachesTake } from "@/components/article/CoachesTake";
 import { ArticleFaq } from "@/components/article/ArticleFaq";
 import { Sources } from "@/components/article/Sources";
 import { AuthorBio } from "@/components/article/AuthorBio";
@@ -74,11 +66,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const toc = extractToc(article.content);
   const related = getRelatedArticles(article);
   const url = `${SITE.url}/blog/${article.slug}`;
-  const products = article.products ?? [];
-  const topProduct = [...products].sort((a, b) => b.rating.overall - a.rating.overall)[0];
 
   const breadcrumbItems = [
-    { name: "Blog", href: "/blog" },
+    { name: "Articles", href: "/blog" },
     ...(category ? [{ name: category.name, href: `/category/${category.slug}` }] : []),
     { name: article.title },
   ];
@@ -87,12 +77,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     buildArticleSchema(article),
     buildBreadcrumbSchema([
       { name: "Home", url: SITE.url },
-      { name: "Blog", url: `${SITE.url}/blog` },
+      { name: "Articles", url: `${SITE.url}/blog` },
       ...(category ? [{ name: category.name, url: `${SITE.url}/category/${category.slug}` }] : []),
       { name: article.title, url },
     ]),
     ...(article.faqs && article.faqs.length > 0 ? [buildFaqSchema(article.faqs)] : []),
-    ...(topProduct ? [buildProductReviewSchema(topProduct, url)] : []),
   ];
 
   return (
@@ -139,20 +128,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <ShareButtons url={url} title={article.title} />
             </div>
 
-            <div className="mt-8">
-              <AffiliateDisclosureBanner />
-            </div>
-
             {article.keyTakeaways && article.keyTakeaways.length > 0 && (
               <div className="mt-8">
                 <KeyTakeaways items={article.keyTakeaways} />
-              </div>
-            )}
-
-            {products.length > 1 && (
-              <div className="mt-10">
-                <h2 className="mb-4 text-2xl font-semibold text-ink-950 dark:text-white">At a Glance</h2>
-                <ComparisonTable products={products} />
               </div>
             )}
 
@@ -160,25 +138,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <MDXRemote source={article.content} components={mdxComponents} />
             </div>
 
-            {products.length > 0 && (
-              <div id="products" className="mt-12 scroll-mt-28 space-y-8">
-                <h2 className="text-2xl font-semibold text-ink-950 dark:text-white">
-                  Full Product Reviews
-                </h2>
-                {products
-                  .sort((a, b) => b.rating.overall - a.rating.overall)
-                  .map((product, index) => (
-                    <ProductCard key={product.id} product={product} rank={index + 1} />
-                  ))}
-              </div>
-            )}
-
-            {topProduct && (
+            {article.coachesTake && (
               <div className="mt-12">
-                <ExpertVerdict
-                  topProduct={topProduct}
-                  verdict={`After side-by-side testing, the ${topProduct.name} earned our top recommendation. ${topProduct.summary}`}
-                />
+                <CoachesTake author={article.author} take={article.coachesTake} />
               </div>
             )}
 
