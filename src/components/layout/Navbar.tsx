@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { SearchModal } from "@/components/layout/SearchModal";
 import { ButtonLink } from "@/components/ui/Button";
+import { LogoMark } from "@/components/ui/LogoMark";
 
 const NAV_LINKS = [
   { label: "Articles", href: "/blog" },
@@ -48,8 +49,8 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950 dark:text-white">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-court-500 text-sm font-black text-white">
-            NP
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 p-1.5 dark:bg-black">
+            <LogoMark className="h-full w-full text-white" />
           </span>
           Next Possession
         </Link>
@@ -132,7 +133,10 @@ export function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] bg-white dark:bg-ink-950 lg:hidden">
           <div className="flex h-16 items-center justify-between px-6">
-            <Link href="/" className="font-display text-lg font-bold text-ink-950 dark:text-white">
+            <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950 dark:text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 p-1.5 dark:bg-black">
+                <LogoMark className="h-full w-full text-white" />
+              </span>
               Next Possession
             </Link>
             <button onClick={() => setMobileOpen(false)} aria-label="Close menu">

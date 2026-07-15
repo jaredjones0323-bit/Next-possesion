@@ -38,14 +38,25 @@ export default function OpengraphImage() {
               width: 56,
               height: 56,
               borderRadius: 14,
-              background: "#f96411",
+              background: "black",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 24,
-              fontWeight: 900,
             }}
           >
-            NP
+            <svg width="38" height="27" viewBox="0 0 90 64" fill="none">
+              <g stroke="white" strokeWidth="9">
+                <line x1="8" y1="54" x2="8" y2="10" />
+                <line x1="32" y1="54" x2="32" y2="10" />
+                <line x1="8" y1="10" x2="32" y2="54" />
+                <line x1="55" y1="54" x2="55" y2="10" />
+              </g>
+              <path
+                d="M55,8 H77 A14,14 0 0 1 77,36 H55 Z M55,17 H68 A5,5 0 0 1 68,27 H55 Z"
+                fillRule="evenodd"
+                fill="white"
+              />
+              <polygon points="38,64 47,64 63,0 54,0" fill="#f96411" />
+            </svg>
           </div>
           {SITE.name}
         </div>

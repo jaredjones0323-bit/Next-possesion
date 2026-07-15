@@ -3,6 +3,7 @@ import { Twitter, Instagram, Youtube } from "lucide-react";
 import { categories } from "@/data/categories";
 import { Container } from "@/components/ui/Container";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
+import { LogoMark } from "@/components/ui/LogoMark";
 import { SITE } from "@/lib/utils";
 
 const COMPANY_LINKS = [
@@ -24,11 +25,14 @@ export function Footer() {
         <div className="grid gap-12 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950 dark:text-white">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-court-500 text-sm font-black text-white">
-                NP
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 p-1.5 dark:bg-black">
+                <LogoMark className="h-full w-full text-white" />
               </span>
               Next Possession
             </Link>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-court-600 dark:text-court-400">
+              {SITE.tagline}
+            </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-500 dark:text-ink-400">
               {SITE.description}
             </p>

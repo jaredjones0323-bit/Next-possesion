@@ -32,7 +32,7 @@ export function slugify(input: string): string {
 
 export const SITE = {
   name: "Next Possession",
-  tagline: "The Playbook for the Next Level.",
+  tagline: "Next Play. Next Opportunity.",
   description:
     "Next Possession helps basketball players and families navigate AAU, recruiting, and the journey to college basketball — honest advice from a real high school and college coach.",
   url: "https://www.nextpossession.com",
