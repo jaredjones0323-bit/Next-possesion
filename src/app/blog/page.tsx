@@ -5,9 +5,9 @@ import { ArticleExplorer } from "@/components/blog/ArticleExplorer";
 import { SITE } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Blog — Basketball Gear Reviews & Buying Guides",
+  title: "Articles — Recruiting, AAU, and Player Development",
   description:
-    "Every basketball gear review, comparison, and buying guide from Next Possession, all in one place. Filter by category, sort by newest or most popular.",
+    "Every article from Next Possession, all in one place — recruiting, AAU, player development, coach perspective, and parent education. Filter by topic, sort by newest or most popular.",
   alternates: { canonical: `${SITE.url}/blog` },
 };
 
@@ -18,14 +18,14 @@ export default function BlogPage() {
     <Container className="py-16">
       <div className="max-w-2xl">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-court-600 dark:text-court-400">
-          The Blog
+          Articles
         </p>
         <h1 className="mt-3 text-display-md font-display font-semibold text-ink-950 dark:text-white">
-          Every review, guide, and comparison
+          Every article, guide, and perspective
         </h1>
         <p className="mt-4 text-ink-500 dark:text-ink-400">
-          Independently tested basketball gear coverage — shoes, hoops, training equipment, apparel,
-          and wearables. Use the filters below to find exactly what you&apos;re shopping for.
+          Honest coverage on recruiting, AAU, player development, coach perspective, and parent
+          education. Use the filters below to find exactly what you&apos;re looking for.
         </p>
       </div>
 

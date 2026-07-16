@@ -1,5 +1,5 @@
 import { SITE } from "@/lib/utils";
-import type { ArticleWithAuthor, Product } from "@/types/content";
+import type { ArticleWithAuthor } from "@/types/content";
 
 export function buildArticleSchema(article: ArticleWithAuthor) {
   return {
@@ -55,38 +55,6 @@ export function buildFaqSchema(faqs: { question: string; answer: string }[]) {
         text: faq.answer,
       },
     })),
-  };
-}
-
-export function buildProductReviewSchema(product: Product, articleUrl: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name,
-    brand: {
-      "@type": "Brand",
-      name: product.brand,
-    },
-    image: product.image,
-    review: {
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: product.rating.overall,
-        bestRating: "5",
-      },
-      author: {
-        "@type": "Organization",
-        name: SITE.name,
-      },
-      url: articleUrl,
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: product.rating.overall,
-      bestRating: "5",
-      ratingCount: "1",
-    },
   };
 }
 

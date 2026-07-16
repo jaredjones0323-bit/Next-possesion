@@ -9,10 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/`, changeFrequency: "daily", priority: 1 },
     { url: `${SITE.url}/blog`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE.url}/about`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE.url}/resources`, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${SITE.url}/newsletter`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE.url}/contact`, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${SITE.url}/how-we-test`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE.url}/editorial-guidelines`, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${SITE.url}/affiliate-disclosure`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE.url}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE.url}/terms`, changeFrequency: "yearly", priority: 0.2 },
   ];

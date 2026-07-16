@@ -2,7 +2,7 @@
   "name": "next-possession",
   "version": "1.0.0",
   "private": true,
-  "description": "Next Possession — premium basketball gear reviews, buying guides, and news.",
+  "description": "Next Possession — basketball recruiting and player development education for AAU and high school players and families.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

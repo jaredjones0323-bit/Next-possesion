@@ -43,12 +43,11 @@ export default function PrivacyPolicyPage() {
           function as intended.
         </p>
 
-        <h2>Affiliate Links and Third Parties</h2>
+        <h2>Third-Party Services</h2>
         <p>
-          Our site contains affiliate links to third-party retailers. When you click these links, the
-          retailer may set its own cookies or collect data according to its own privacy policy. We
-          encourage you to review the privacy policies of any third-party sites you visit through our
-          links.
+          We use third-party services for functions like email delivery (our newsletter), video
+          conferencing (for consultations, once available), and site analytics. These providers may
+          collect data according to their own privacy policies, which we encourage you to review.
         </p>
 
         <h2>Data Sharing</h2>

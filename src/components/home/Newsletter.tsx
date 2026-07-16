@@ -13,11 +13,11 @@ export function Newsletter() {
               <Mail className="h-5 w-5 text-white" />
             </span>
             <h2 className="mt-5 text-display-sm font-display font-semibold text-white">
-              Never miss a gear drop
+              Get the weekly playbook
             </h2>
             <p className="mt-3 text-base text-white/80">
-              Join 42,000+ players getting our weekly roundup of new reviews, deal alerts, and buying
-              guides. No spam, unsubscribe anytime.
+              Recruiting updates, coach insights, and honest advice for players and parents — every
+              week, straight from the sideline. No spam, unsubscribe anytime.
             </p>
             <div className="mt-8 flex justify-center">
               <NewsletterForm dark />

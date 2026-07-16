@@ -3,16 +3,18 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, Search, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, Search, X, Mail } from "lucide-react";
 import { categories } from "@/data/categories";
 import { iconMap } from "@/lib/icon-map";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { SearchModal } from "@/components/layout/SearchModal";
 import { ButtonLink } from "@/components/ui/Button";
+import { LogoMark } from "@/components/ui/LogoMark";
 
 const NAV_LINKS = [
-  { label: "Blog", href: "/blog" },
+  { label: "Articles", href: "/blog" },
+  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -47,8 +49,8 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950 dark:text-white">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-court-500 text-sm font-black text-white">
-            NP
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 p-1.5 dark:bg-black">
+            <LogoMark className="h-full w-full text-white" />
           </span>
           Next Possession
         </Link>
@@ -59,7 +61,7 @@ export function Navbar() {
               className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-950 dark:text-ink-200 dark:hover:bg-ink-900 dark:hover:text-white"
               aria-expanded={megaOpen}
             >
-              Categories
+              Topics
               <ChevronDown className={cn("h-4 w-4 transition-transform", megaOpen && "rotate-180")} />
             </button>
 
@@ -114,8 +116,8 @@ export function Navbar() {
           </button>
           <ThemeToggle />
           <div className="hidden lg:block">
-            <ButtonLink href="/blog" size="sm" icon={ArrowRight}>
-              Read Latest
+            <ButtonLink href="/newsletter" size="sm" icon={Mail}>
+              Join Newsletter
             </ButtonLink>
           </div>
           <button
@@ -131,7 +133,10 @@ export function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[100] bg-white dark:bg-ink-950 lg:hidden">
           <div className="flex h-16 items-center justify-between px-6">
-            <Link href="/" className="font-display text-lg font-bold text-ink-950 dark:text-white">
+            <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-ink-950 dark:text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink-950 p-1.5 dark:bg-black">
+                <LogoMark className="h-full w-full text-white" />
+              </span>
               Next Possession
             </Link>
             <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
@@ -139,7 +144,7 @@ export function Navbar() {
             </button>
           </div>
           <div className="flex flex-col gap-1 px-6 py-4">
-            <p className="mb-1 mt-3 text-xs font-bold uppercase tracking-wide text-ink-400">Categories</p>
+            <p className="mb-1 mt-3 text-xs font-bold uppercase tracking-wide text-ink-400">Topics</p>
             {categories.map((category) => (
               <Link
                 key={category.slug}
@@ -159,6 +164,11 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-4">
+              <ButtonLink href="/newsletter" icon={Mail} className="w-full">
+                Join Newsletter
+              </ButtonLink>
+            </div>
           </div>
         </div>
       )}

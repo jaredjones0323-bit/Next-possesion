@@ -13,7 +13,7 @@ export default function NotFound() {
       </h1>
       <p className="mt-3 max-w-md text-ink-500 dark:text-ink-400">
         The page you&apos;re looking for doesn&apos;t exist or may have moved. Try searching, or head back to
-        one of our gear categories below.
+        one of our topics below.
       </p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <ButtonLink href="/" icon={Home}>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { BadgeCheck } from "lucide-react";
 import { authors, getAuthorBySlug } from "@/data/authors";
 import { getAllArticles } from "@/lib/articles";
 import { Container } from "@/components/ui/Container";
@@ -35,9 +34,8 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
           <Image src={author.avatar} alt={author.name} fill sizes="96px" className="object-cover" />
         </div>
         <div>
-          <h1 className="flex items-center justify-center gap-2 text-display-sm font-display font-semibold text-ink-950 dark:text-white">
+          <h1 className="text-display-sm font-display font-semibold text-ink-950 dark:text-white">
             {author.name}
-            <BadgeCheck className="h-6 w-6 text-court-500" />
           </h1>
           <p className="mt-1 text-ink-400">{author.role}</p>
         </div>

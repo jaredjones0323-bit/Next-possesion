@@ -20,30 +20,6 @@ export type Author = {
   articlesCount?: number;
 };
 
-export type ProductRating = {
-  overall: number;
-  performance: number;
-  value: number;
-  durability: number;
-  comfort: number;
-};
-
-export type Product = {
-  id: string;
-  name: string;
-  brand: string;
-  image: string;
-  price: string;
-  originalPrice?: string;
-  rating: ProductRating;
-  badge?: "Editor's Choice" | "Best Value" | "Best Overall" | "Premium Pick" | "Budget Pick";
-  pros: string[];
-  cons: string[];
-  affiliateUrl: string;
-  retailer: string;
-  summary: string;
-};
-
 export type FaqItem = {
   question: string;
   answer: string;
@@ -61,12 +37,12 @@ export type ArticleFrontmatter = {
   heroImage: string;
   heroImageAlt: string;
   featured?: boolean;
-  editorsPick?: boolean;
+  coachesPick?: boolean;
   trending?: boolean;
   popular?: boolean;
-  articleType?: "review" | "guide" | "comparison" | "news";
-  products?: Product[];
+  articleType?: "guide" | "perspective" | "story" | "news";
   keyTakeaways?: string[];
+  coachesTake?: string;
   faqs?: FaqItem[];
   sources?: { label: string; url: string }[];
 };

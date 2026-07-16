@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Users, FlaskConical } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import type { Article } from "@/types/content";
-
-const STATS = [
-  { label: "Products tested", value: "480+", icon: FlaskConical },
-  { label: "Monthly readers", value: "310K", icon: Users },
-  { label: "Independent reviews", value: "100%", icon: ShieldCheck },
-];
 
 export function Hero({ featured }: { featured: Article }) {
   return (
@@ -19,38 +13,26 @@ export function Hero({ featured }: { featured: Article }) {
         <div className="animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white px-4 py-1.5 text-xs font-semibold text-ink-600 shadow-soft dark:border-ink-700 dark:bg-ink-900 dark:text-ink-300">
             <span className="h-1.5 w-1.5 rounded-full bg-court-500" />
-            Independent testing since 2021
+            Written by a real high school & college coach
           </span>
           <h1 className="mt-6 text-display-lg font-display font-semibold leading-[1.03] text-ink-950 dark:text-white">
-            Basketball gear,
+            The Playbook for
             <br />
-            tested to the <span className="text-court-500">buzzer.</span>
+            the <span className="text-court-500">Next Level.</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-500 dark:text-ink-400">
-            We court-test every shoe, hoop, and training tool we recommend — no sponsored placements,
-            no guesswork. Just data-driven reviews to help you buy gear that performs.
+            Helping basketball players and families navigate AAU, recruiting, and the journey to
+            college basketball — honest advice, not hype. You can&apos;t control the last possession.
+            You can only control the next one.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <ButtonLink href="/blog" size="lg" icon={ArrowRight}>
-              Browse Reviews
+              Read Articles
             </ButtonLink>
-            <ButtonLink href="/how-we-test" variant="outline" size="lg">
-              How We Test
+            <ButtonLink href="/newsletter" variant="outline" size="lg">
+              Join Newsletter
             </ButtonLink>
           </div>
-
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-ink-100 pt-8 dark:border-ink-800">
-            {STATS.map((stat) => (
-              <div key={stat.label}>
-                <dt className="flex items-center gap-1.5 text-xs font-medium text-ink-400">
-                  <stat.icon className="h-3.5 w-3.5" /> {stat.label}
-                </dt>
-                <dd className="mt-1 font-display text-2xl font-bold text-ink-950 dark:text-white">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
         <Link
@@ -70,7 +52,7 @@ export function Hero({ featured }: { featured: Article }) {
           </div>
           <div className="absolute inset-x-0 bottom-0 p-8">
             <span className="mb-3 inline-block rounded-full bg-court-500 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-              Editor&apos;s Pick
+              Coach&apos;s Pick
             </span>
             <h2 className="text-2xl font-semibold leading-snug text-white">{featured.title}</h2>
             <p className="mt-2 line-clamp-2 text-sm text-white/70">{featured.description}</p>

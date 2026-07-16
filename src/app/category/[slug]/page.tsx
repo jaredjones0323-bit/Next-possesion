@@ -39,7 +39,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
     <Container className="py-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <Breadcrumbs items={[{ name: "Blog", href: "/blog" }, { name: category.name }]} />
+      <Breadcrumbs items={[{ name: "Articles", href: "/blog" }, { name: category.name }]} />
 
       <div className="mt-6 flex items-start gap-4">
         {Icon && (

@@ -6,11 +6,11 @@ import Image from "next/image";
 import { Search, X, TrendingUp } from "lucide-react";
 
 const POPULAR_SEARCHES = [
-  "best basketball shoes",
-  "portable hoops",
-  "shooting machine",
-  "vertical jump tracker",
-  "shoe width guide",
+  "how recruiting works",
+  "choosing an AAU team",
+  "basketball IQ",
+  "what coaches notice",
+  "D1 vs D2 vs D3",
 ];
 
 type Result = {
@@ -81,7 +81,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search reviews, guides, gear..."
+            placeholder="Search articles, recruiting, AAU..."
             className="w-full bg-transparent text-base text-ink-900 outline-none placeholder:text-ink-400 dark:text-white"
           />
           <button type="button" onClick={onClose} aria-label="Close search">

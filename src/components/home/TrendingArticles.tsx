@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArticleCard } from "@/components/ui/ArticleCard";
 
-export function TrendingReviews({ articles }: { articles: Article[] }) {
+export function TrendingArticles({ articles }: { articles: Article[] }) {
   if (articles.length === 0) return null;
 
   return (
@@ -11,8 +11,8 @@ export function TrendingReviews({ articles }: { articles: Article[] }) {
       <Container>
         <SectionHeading
           eyebrow="Trending now"
-          title="What readers are checking out"
-          description="The reviews getting the most traffic this week."
+          title="What players and parents are reading"
+          description="The articles getting the most attention this week."
           className="[&_h2]:text-white [&_p]:text-white/60"
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

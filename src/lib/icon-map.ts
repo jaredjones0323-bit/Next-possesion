@@ -1,18 +1,16 @@
 import {
-  Footprints,
-  Dumbbell,
-  CircleDot,
-  Shirt,
-  Activity,
-  Backpack,
+  GraduationCap,
+  Users,
+  TrendingUp,
+  Eye,
+  HeartHandshake,
   type LucideIcon,
 } from "lucide-react";
 
 export const iconMap: Record<string, LucideIcon> = {
-  footprints: Footprints,
-  dumbbell: Dumbbell,
-  "circle-dot": CircleDot,
-  shirt: Shirt,
-  activity: Activity,
-  backpack: Backpack,
+  "graduation-cap": GraduationCap,
+  users: Users,
+  "trending-up": TrendingUp,
+  eye: Eye,
+  "heart-handshake": HeartHandshake,
 };

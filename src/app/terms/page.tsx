@@ -21,31 +21,27 @@ export default function TermsPage() {
 
         <h2>Use of Content</h2>
         <p>
-          All content on this Site, including articles, reviews, graphics, and logos, is owned by{" "}
+          All content on this Site, including articles, guides, graphics, and logos, is owned by{" "}
           {SITE.name} or its licensors and is protected by copyright and other intellectual property
           laws. You may not reproduce, distribute, or create derivative works from our content without
           written permission, except for personal, non-commercial use with proper attribution.
         </p>
 
-        <h2>Affiliate Relationships</h2>
-        <p>
-          {SITE.name} participates in affiliate marketing programs, meaning we may earn commissions on
-          purchases made through links on our Site. See our{" "}
-          <a href="/affiliate-disclosure">Affiliate Disclosure</a> for full details.
-        </p>
-
         <h2>No Professional Advice</h2>
         <p>
-          Content on this Site is for informational purposes only and does not constitute medical,
-          fitness, or professional advice. Consult a qualified professional before beginning any new
-          training program or making decisions related to injury or health.
+          Content on this Site is for informational and educational purposes only and does not
+          constitute legal, NCAA compliance, medical, or professional advice. Recruiting rules and
+          eligibility requirements can vary and change — verify current rules with the NCAA, NAIA, or
+          relevant governing body, and consult a qualified professional for guidance specific to your
+          situation.
         </p>
 
-        <h2>Product Information Accuracy</h2>
+        <h2>No Guarantee of Outcomes</h2>
         <p>
-          We strive to keep product information, pricing, and availability accurate and current, but
-          we do not guarantee accuracy. Prices and availability are subject to change by the retailer
-          at any time.
+          {SITE.name} does not guarantee any specific recruiting outcome, scholarship offer, roster
+          spot, or athletic result from following advice published on this Site or from any service we
+          offer. Outcomes depend on factors outside our control, including a player&apos;s ability,
+          fit, and individual circumstances.
         </p>
 
         <h2>Limitation of Liability</h2>
