@@ -94,31 +94,59 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         />
       ))}
 
-      <div className="relative h-[38vh] min-h-[320px] w-full sm:h-[48vh]">
-        <Image
-          src={article.heroImage}
-          alt={article.heroImageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-ink-950/10" />
-        <Container className="absolute inset-x-0 bottom-0 pb-8">
-          {category && (
-            <Badge variant="dark" className="mb-4 bg-court-500 text-white">
-              {category.name}
-            </Badge>
-          )}
-          <h1 className="max-w-3xl text-display-md font-display font-semibold leading-tight text-white">
-            {article.title}
-          </h1>
-        </Container>
-      </div>
+      {article.heroImageHasText ? (
+        <>
+          <div className="relative h-[38vh] min-h-[280px] w-full sm:h-[42vh]">
+            <Image
+              src={article.heroImage}
+              alt={article.heroImageAlt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <Container className="pb-8 pt-8">
+            <Breadcrumbs items={breadcrumbItems} />
+            {category && (
+              <Badge variant="court" className="mb-4 mt-6">
+                {category.name}
+              </Badge>
+            )}
+            <h1 className="max-w-3xl text-display-md font-display font-semibold leading-tight text-ink-950 dark:text-white">
+              {article.title}
+            </h1>
+          </Container>
+        </>
+      ) : (
+        <>
+          <div className="relative h-[38vh] min-h-[320px] w-full sm:h-[48vh]">
+            <Image
+              src={article.heroImage}
+              alt={article.heroImageAlt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/30 to-ink-950/10" />
+            <Container className="absolute inset-x-0 bottom-0 pb-8">
+              {category && (
+                <Badge variant="dark" className="mb-4 bg-court-500 text-white">
+                  {category.name}
+                </Badge>
+              )}
+              <h1 className="max-w-3xl text-display-md font-display font-semibold leading-tight text-white">
+                {article.title}
+              </h1>
+            </Container>
+          </div>
 
-      <Container className="py-8">
-        <Breadcrumbs items={breadcrumbItems} />
-      </Container>
+          <Container className="py-8">
+            <Breadcrumbs items={breadcrumbItems} />
+          </Container>
+        </>
+      )}
 
       <Container className="pb-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_300px]">

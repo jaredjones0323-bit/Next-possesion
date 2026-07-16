@@ -36,6 +36,7 @@ export type ArticleFrontmatter = {
   updatedAt: string;
   heroImage: string;
   heroImageAlt: string;
+  heroImageHasText?: boolean;
   featured?: boolean;
   coachesPick?: boolean;
   trending?: boolean;
