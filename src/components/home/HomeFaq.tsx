@@ -12,7 +12,7 @@ const FAQS = [
   {
     question: "Who writes the content?",
     answer:
-      "Next Possession is founded and written by Marcus Reid, a high school and AAU basketball coach with over a decade of experience evaluating players and advising families through recruiting. See the About page for the full team.",
+      "Next Possession is founded and written by Jared Jones, a high school and AAU basketball coach with over a decade of experience evaluating players and advising families through recruiting. See the About page for the full team.",
   },
   {
     question: "Is this content specific to one region or level of basketball?",

@@ -119,7 +119,7 @@ slug: "article-title" # must match the filename
 description: "SEO meta description, 150-160 characters."
 category: "recruiting" # must match a slug in src/data/categories.ts
 tags: ["recruiting", "college-basketball"]
-authorSlug: "marcus-reid" # must match a slug in src/data/authors.ts
+authorSlug: "jared-jones" # must match a slug in src/data/authors.ts
 publishedAt: "2026-01-08"
 updatedAt: "2026-06-24"
 heroImage: "https://images.unsplash.com/..."
